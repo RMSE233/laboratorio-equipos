@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.laboratorioequipos.controller.EquipoController"
+            prefWidth="950" prefHeight="600">
+    <padding>
+        <Insets top="15" right="15" bottom="15" left="15"/>
+    </padding>
+
+    <top>
+        <VBox spacing="10">
+            <Label text="Control de Equipos de Laboratorio" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+            <GridPane hgap="10" vgap="10">
+                <Label text="Código:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtCodigo" promptText="Ej. EQ-009" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                <Label text="Nombre:" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+                <TextField fx:id="txtNombre" promptText="Nombre del equipo" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+
+                <Label text="Marca:" GridPane.rowIndex="0" GridPane.columnIndex="4"/>
+                <TextField fx:id="txtMarca" promptText="Ej. Dell, Cisco" GridPane.rowIndex="0" GridPane.columnIndex="5"/>
+
+                <Label text="Tipo de Equipo:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <ComboBox fx:id="cmbTipo" prefWidth="180" promptText="Seleccione tipo" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <Label text="Estado:" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+                <ComboBox fx:id="cmbEstado" prefWidth="180" promptText="Seleccione estado" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+
+                <Label text="Cantidad:" GridPane.rowIndex="1" GridPane.columnIndex="4"/>
+                <TextField fx:id="txtCantidad" promptText="0" GridPane.rowIndex="1" GridPane.columnIndex="5"/>
+            </GridPane>
+
+            <HBox spacing="10">
+                <Button text="Guardar" onAction="#onGuardar" style="-fx-background-color: #2e7d32; -fx-text-fill: white;"/>
+                <Button text="Actualizar" onAction="#onActualizar" style="-fx-background-color: #1565c0; -fx-text-fill: white;"/>
+                <Button text="Eliminar" onAction="#onEliminar" style="-fx-background-color: #c62828; -fx-text-fill: white;"/>
+                <Button text="Limpiar" onAction="#onLimpiar"/>
+            </HBox>
+            <Separator/>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox spacing="10">
+            <padding><Insets top="10"/></padding>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Buscar por nombre:"/>
+                <TextField fx:id="txtBuscarNombre" promptText="Fragmento del nombre..." prefWidth="220"/>
+                <Label text="Filtrar por tipo:"/>
+                <ComboBox fx:id="cmbFiltroTipo" prefWidth="180"/>
+                <Button text="Buscar / Aplicar filtros" onAction="#onBuscarFiltrar"/>
+            </HBox>
+
+            <TableView fx:id="tblEquipos" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colCodigo" text="Código" prefWidth="100"/>
+                    <TableColumn fx:id="colNombre" text="Nombre" prefWidth="240"/>
+                    <TableColumn fx:id="colMarca" text="Marca" prefWidth="130"/>
+                    <TableColumn fx:id="colTipo" text="Tipo de Equipo" prefWidth="160"/>
+                    <TableColumn fx:id="colEstado" text="Estado" prefWidth="150"/>
+                    <TableColumn fx:id="colCantidad" text="Cantidad" prefWidth="90"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+</BorderPane>
