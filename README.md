@@ -186,7 +186,3 @@ Entre las pruebas realizadas se encuentran:
 El desarrollo de este proyecto permite aplicar conocimientos de programación orientada a objetos, interfaces gráficas, conexión con bases de datos y persistencia de información.
 
 Mediante la integración de JavaFX, Hibernate, JPA y PostgreSQL, se obtiene una aplicación que facilita la administración de los equipos de laboratorio, manteniendo la información organizada y permitiendo realizar las operaciones necesarias para el control del inventario.
-
-## 11. Repositorio
-
-**GitHub:** [RMSE233/laboratorio-equipos](https://github.com/RMSE233/laboratorio-equipos)
